@@ -1,6 +1,7 @@
 
 public class poem {
     private int score;
+    private int adjustedScore;
     public String lineOne;
     public String lineTwo;
     public String lineThree;
@@ -23,7 +24,8 @@ public class poem {
         flower = flowerType;
     }
 
-    public int poemScore()
+    //This returns the raw score based on rhymes and if the selected flower was used at least once. It doesn't account for any other rules.//
+    public int rawPoemScore()
     {
         String entirePoem = (lineOne + " " + lineTwo + " " + lineThree + " " + lineFour + " " + lineFive + " " + lineSix + " " + lineSeven + " " + lineEight);
         if (lineOne.substring(lineOne.length()-3).equals(lineThree.substring(lineThree.length()-3)))
@@ -81,4 +83,39 @@ public class poem {
         return score;
     }
 
+    // Returns the adjusted score based on if the user rhymed any words with itself.//
+    public int checkForDuplicates()
+    {
+        adjustedScore = score;
+        if (lineOne.substring(lineOne.lastIndexOf(" ")).equals(lineThree.substring(lineThree.lastIndexOf(" "))))
+        {
+            adjustedScore = adjustedScore - 5;
+        }
+        if (lineTwo.substring(lineTwo.lastIndexOf(" ")).equals(lineFour.substring(lineFour.lastIndexOf(" "))))
+        {
+            adjustedScore = adjustedScore - 5;
+        }
+        if (lineThree.substring(lineThree.lastIndexOf(" ")).equals(lineFive.substring(lineFive.lastIndexOf(" "))))
+        {
+            adjustedScore = adjustedScore - 5;
+        }
+        if (lineFour.substring(lineFour.lastIndexOf(" ")).equals(lineSix.substring(lineSix.lastIndexOf(" "))))
+        {
+            adjustedScore = adjustedScore - 5;
+        }
+        if (lineFive.substring(lineFive.lastIndexOf(" ")).equals(lineSeven.substring(lineSeven.lastIndexOf(" "))))
+        {
+            adjustedScore = adjustedScore - 5;
+        }
+        if (lineSix.substring(lineSix.lastIndexOf(" ")).equals(lineEight.substring(lineEight.lastIndexOf(" "))))
+        {
+            adjustedScore = adjustedScore - 5;
+        }
+        return adjustedScore;
     }
+
+    public boolean didCheat()
+    {
+        return score != adjustedScore;
+    }
+}

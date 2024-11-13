@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Write an 8 line poem one line at a time and try to rhyme the last word of every other line, meaning that the last 2 or 3 letters must be the same");
+        System.out.println("Write an 8 line poem one line at a time and try to rhyme the last word of every other line, meaning that the last 2 or 3 letters must be the same.");
+        System.out.println("Each line must contain more than one word, and you can't rhyme a word with itself (or else your score will be pretty bad).");
         flower plant = new flower();
         Scanner s = new Scanner(System.in);
         System.out.println("Type a number 1-3");
@@ -36,6 +37,17 @@ public class Main {
         Scanner h = new Scanner(System.in);
         String eighthLine = h.nextLine();
         poem Flower = new poem(firstLine, secondLine, thirdLine, fourthLine, fifthLine, sixthLine, seventhLine, eighthLine, randomFlower);
-        System.out.println("Total score: " + (Flower.poemScore()));
+        int rawScore = Flower.rawPoemScore();
+        int adjustedScore = Flower.checkForDuplicates();
+        System.out.println("Raw score: " + rawScore);
+        System.out.println("Did you cheat? Let's see");
+        if (Flower.didCheat())
+        {
+            System.out.println("You did cheat! Your real score is: " + adjustedScore);
+        }
+        else
+        {
+            System.out.println("You didn't cheat. Your real score is: " + rawScore + ", thanks for playing!");
+        }
     }
 }
