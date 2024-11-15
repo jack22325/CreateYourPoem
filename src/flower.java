@@ -19,4 +19,9 @@ public class flower {
         }
         return flower;
     }
+
+    public String perfectNineteen()
+    {
+        return "A perfect 19 would look like this, if the theme was for cities instead of flowers. \n The city of "
+    }
 }

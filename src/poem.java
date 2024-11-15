@@ -118,4 +118,9 @@ public class poem {
     {
         return score != adjustedScore;
     }
+
+    public boolean perfectScore()
+    {
+        return adjustedScore == 19;
+    }
 }
