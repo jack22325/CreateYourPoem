@@ -51,19 +51,18 @@ public class Main {
         }
         if (Flower.perfectScore())
         {
+            System.out.println("Your score was a perfect 19! Thanks for playing.");
+        }
+        else
+        {
             System.out.println("Try again to get a perfect score of 19.");
             System.out.println("Would you like to see an example of a perfect 19? Y or N.");
             Scanner i = new Scanner(System.in);
             String example = i.nextLine();
             if (example.equals("Y"))
             {
-                System.out.println();
+                System.out.println(plant.perfectNineteen());
             }
         }
-        else
-        {
-            System.out.println("Your score was a perfect 19! Thanks for playing.");
-        }
-
     }
 }
