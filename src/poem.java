@@ -114,11 +114,13 @@ public class poem {
         return adjustedScore;
     }
 
+    // Is true if the user cheated.//
     public boolean didCheat()
     {
         return score != adjustedScore;
     }
 
+    // Is true if the user got a perfect score.//
     public boolean perfectScore()
     {
         return adjustedScore == 19;

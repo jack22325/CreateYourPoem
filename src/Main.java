@@ -3,9 +3,9 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Write an 8 line poem one line at a time and try to rhyme the last word of every other line, meaning that the last 2 or 3 letters must be the same.");
-        System.out.println("Each line must contain more than one word, and you can't rhyme a word with itself (or else your score will be pretty bad).");
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Write an 8 line poem one line at a time and try to rhyme the last word of every other line (ABAB rhyme scheme), meaning that the last 2 or 3 letters must be the same to earn the respective amount of points.");
+        System.out.println("Each line must contain more than one word, and you can't rhyme a word with itself or else your score will decrease.");
         flower plant = new flower();
         Scanner s = new Scanner(System.in);
         System.out.println("Type a number 1-3");
@@ -40,7 +40,21 @@ public class Main {
         int rawScore = Flower.rawPoemScore();
         int adjustedScore = Flower.checkForDuplicates();
         System.out.println("Raw score: " + rawScore);
+        Thread.sleep(1000);
         System.out.println("Did you cheat? Let's see");
+        Thread.sleep(1000);
+        System.out.print("Scanning each line.");
+        Thread.sleep(400);
+        System.out.print(".");
+        Thread.sleep(400);
+        System.out.println(".");
+        Thread.sleep(800);
+        System.out.print("Checking for duplicate words.");
+        Thread.sleep(400);
+        System.out.print(".");
+        Thread.sleep(400);
+        System.out.println(".");
+        Thread.sleep(800);
         if (Flower.didCheat())
         {
             System.out.println("You did cheat! Your real score is: " + adjustedScore);
@@ -55,13 +69,19 @@ public class Main {
         }
         else
         {
+            Thread.sleep(800);
             System.out.println("Try again to get a perfect score of 19.");
+            Thread.sleep(800);
             System.out.println("Would you like to see an example of a perfect 19? Y or N.");
             Scanner i = new Scanner(System.in);
             String example = i.nextLine();
             if (example.equals("Y"))
             {
                 System.out.println(plant.perfectNineteen());
+            }
+            else
+            {
+                System.out.println("Good luck.");
             }
         }
     }
