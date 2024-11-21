@@ -75,7 +75,7 @@ public class Main {
             System.out.println("Would you like to see an example of a perfect 19? Y or N.");
             Scanner i = new Scanner(System.in);
             String example = i.nextLine();
-            if (example.equals("Y"))
+            if (example.equals("Y")||(example.equals("y")))
             {
                 System.out.println(plant.perfectNineteen());
             }
