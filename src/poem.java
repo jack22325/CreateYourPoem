@@ -12,7 +12,7 @@ public class poem {
     public String lineEight;
     public String flower;
 
-    // This is the constructor.//
+    // This is the constructor containing each individual line of the poem and the type of flower.//
     public poem(String line1, String line2, String line3, String line4, String line5, String line6, String line7, String line8, String flowerType) {
         lineOne = line1;
         lineTwo = line2;
