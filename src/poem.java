@@ -1,4 +1,4 @@
-
+// The poem class represents an 8 line poem one line at a time. It holds the score, adjusted score, and flower string as well.//
 public class poem {
     private int score;
     private int adjustedScore;

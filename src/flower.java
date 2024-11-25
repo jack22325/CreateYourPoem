@@ -1,3 +1,4 @@
+// The flower class is a class that assists the poem class.//
 public class flower {
 
     // This method determines the flower that the user must use in their poem based on a number 1-3 that they select. They won't know which number correlates to which flower beforehand.
