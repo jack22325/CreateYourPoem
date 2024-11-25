@@ -1,4 +1,6 @@
 public class flower {
+
+    // This is the constructor.//
     public flower()
     {}
 

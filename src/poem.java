@@ -12,6 +12,7 @@ public class poem {
     public String lineEight;
     public String flower;
 
+    // This is the constructor.//
     public poem(String line1, String line2, String line3, String line4, String line5, String line6, String line7, String line8, String flowerType) {
         lineOne = line1;
         lineTwo = line2;
@@ -114,13 +115,13 @@ public class poem {
         return adjustedScore;
     }
 
-    // Is true if the user cheated.//
+    // Returns true if the user cheated.//
     public boolean didCheat()
     {
         return score != adjustedScore;
     }
 
-    // Is true if the user got a perfect score.//
+    // Returns true if the user got a perfect score.//
     public boolean perfectScore()
     {
         return adjustedScore == 19;
